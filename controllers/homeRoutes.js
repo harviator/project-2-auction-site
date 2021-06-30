@@ -6,20 +6,24 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const auctionData = await Posting.findAll({
-      include: [{
+      include: [
+          {
         model: User,
         attributes: ['username']
-      }]
+      },
+      {
+          model: Merchandise,
+          attributes: ['name']
+      }
+    ],
     });
-
     const auctions = auctionData.map((auction) => auction.get({ plain: true }));
-
     res.render('homepage', {
       auctions,
-      logged_in: req.session.logged_in
+    //   logged_in: req.session.logged_in
     })
   } catch (error) {
-  res.status(500).json(err);
+  res.status(500).json(error);
   }
 });
 
