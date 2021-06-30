@@ -46,11 +46,11 @@ router.get('/posting/:id', async (req, res) => {
                 ],
             });
             const posting = postingData.get({ plain: true})
-            res.status(200).json(posting)
-            // res.render('posting', {
-            //     posting,
-            //     // loggedIn: req.session.loggedIn 
-            // });
+            console.log(posting)
+            res.render('viewitem', {
+                posting,
+                // loggedIn: req.session.loggedIn 
+            });
         } catch (err) {
             res.status(500).json(err);
         }
