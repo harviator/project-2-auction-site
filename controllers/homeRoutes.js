@@ -4,62 +4,66 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  try {
-    const auctionData = await Posting.findAll({
-      include: [
-          {
-        model: User,
-        attributes: ['username']
-      },
-      {
-          model: Merchandise,
-          attributes: ['name']
-      }
-    ],
-    });
-    const auctions = auctionData.map((auction) => auction.get({ plain: true }));
-    res.render('homepage', {
-      auctions,
-    //   logged_in: req.session.logged_in
-    })
-  } catch (error) {
-  res.status(500).json(error);
-  }
+    try {
+        const auctionData = await Posting.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Merchandise,
+                    attributes: ['name']
+                }
+            ],
+        });
+        const auctions = auctionData.map((auction) => auction.get({ plain: true }));
+        console.log(auctions)
+        res.render('homepage', {
+            auctions,
+            //   logged_in: req.session.logged_in
+        })
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
 router.get('/posting/:id', async (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-
-    try {
-      const merchandiseData = await Merchandise.findByPk(req.params.id, {
-      include: [
-        {
-          model: Posting,
-          attributes: [
-            'current_bid',
-            'acceptable_trades',
-          ],
-        },
-      ],
-      });
-      const merchandise = merchandiseData.get({ plain: true });
-
-      res.render('posting', { posting, loggedIn: req.session.loggedIn});
-    }  catch (err) {
-      res.status(500).json(err);
-    }
-  }
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    // } else {
+        try {
+            const postingData = await Posting.findByPk(req.params.id, {
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
+                        model: Merchandise,
+                        attributes: ['name']
+                    }
+                ],
+            });
+            const posting = postingData.get({ plain: true})
+            res.status(200).json(posting)
+            // res.render('posting', {
+            //     posting,
+            //     // loggedIn: req.session.loggedIn 
+            // });
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    // }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
 
-  res.render('login');
+    res.render('login');
 });
 
 module.exports = router;
