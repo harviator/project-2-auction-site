@@ -9,8 +9,8 @@ Merchandise.init (
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primarykey: true,
-      autoincrement: true
+      primaryKey: true,
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
@@ -18,7 +18,6 @@ Merchandise.init (
     },
     year_released: {
       type: DataTypes.INTEGER,
-      allowNull: false
     }
   },
   {
