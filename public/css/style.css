@@ -1,0 +1,11 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --redBorder: #F96363;
+    --blueButton: #15BEE3;
+    --redButton: #EF6161;
+}
