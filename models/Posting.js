@@ -11,7 +11,8 @@ Posting.init (
     id: {
     type: DataTypes.INTEGER,
     alowNull: false,
-    primarykey: true
+    primaryKey: true,
+    autoIncrement: true,
     },
     quality: {
       type: DataTypes.INTEGER,
@@ -29,7 +30,6 @@ Posting.init (
     },
     current_bid: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     acceptable_trades: {
       type: DataTypes.STRING,

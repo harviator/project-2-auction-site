@@ -1,0 +1,54 @@
+[
+    {
+        "name":"Nintendo Entertainment System",
+        "description": ""
+    },
+    {
+        "name":"Super Nintendo Entertainment System",
+        "description": ""
+    },
+    {
+        "name":"Nintendo 64",
+        "description": ""
+    },
+    {
+        "name":"Nintendo GameCube",
+        "description": ""
+    },
+    {
+        "name":"Wii",
+        "description": ""
+    },
+    {
+        "name":"Wii U",
+        "description": ""
+    },
+    {
+        "name":"Game Boy",
+        "description": ""
+    },
+    {
+        "name":"Game Boy Color",
+        "description": ""
+    },
+    {
+        "name":"Game Boy Advance",
+        "description": ""
+    },
+    {
+        "name":"Nintendo DS",
+        "description": ""
+    },
+    {
+        "name":"Nintendo 3DS",
+        "description": ""
+    },
+    {
+        "name":"Nintendo Switch",
+        "description": ""
+    },
+    {
+        "name":"Nintendo Switch Lite",
+        "description": ""
+    }
+]
