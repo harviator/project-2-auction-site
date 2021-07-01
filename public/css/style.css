@@ -49,3 +49,6 @@ a.active,a:hover {
     background: var(--blueButton);
     transition: .5s ease;
 }
+.checkbtn {
+    font-size: 30px;
+}
