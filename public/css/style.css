@@ -1,6 +1,8 @@
 * {
     margin: 0px;
     padding: 0px;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
@@ -8,4 +10,10 @@
     --redBorder: #F96363;
     --blueButton: #15BEE3;
     --redButton: #EF6161;
+}
+
+nav {
+    background: var(--redBorder);
+    height: 80px;
+    width: 100%;
 }
