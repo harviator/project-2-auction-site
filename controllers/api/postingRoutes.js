@@ -1,12 +1,9 @@
 const router = require('express').Router();
-const { Posting } = require('../../models');
+const { User, Merchandise, Posting } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET SPECIFIC POSTINGS
 router.get('/:id', async (req, res) => {
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/login');
-    // } else {
         try {
             const postingData = await Posting.findByPk(req.params.id, {
                 include: [
@@ -20,6 +17,10 @@ router.get('/:id', async (req, res) => {
                     }
                 ],
             });
+            if (!postingData) {
+                console.log("no posting data")
+                return
+            }
             const posting = postingData.get({ plain: true})
             console.log(posting)
             res.render('viewitem', {
@@ -60,6 +61,7 @@ router.put('/:id', async (req, res) => {
                 }
             }
         );
+        console.log(postingData)
 
         if (!postingData) {
             res.status(404).json({ message: 'POSTING NOT FOUND' });
