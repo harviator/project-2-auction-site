@@ -18,7 +18,12 @@ nav {
     width: 100%;
 }
 
-label.logo {
+#logo {
+    font-size: 45px;
+    margin: 5px;
+}
+
+label.title {
     color:white;
     font-size: 35px;
     line-height: 80px;
@@ -51,4 +56,53 @@ a.active,a:hover {
 }
 .checkbtn {
     font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+
+@media (max-width: 952px) {
+    label.title {
+        font-size: 30px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #414a4d;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s ease;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0px;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    a:hover,a.active {
+        background: none;
+        color: pink;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
 }
