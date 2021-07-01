@@ -31,10 +31,6 @@ Posting.init (
     current_bid: {
       type: DataTypes.INTEGER,
     },
-    acceptable_trades: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     merchandise_id: {
       type: DataTypes.INTEGER,
       references: {

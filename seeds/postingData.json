@@ -1,22 +1,18 @@
 [
     {
         "quality": 10,
-        "starting_bid": 10,
-        "acceptable_trades": ""
+        "starting_bid": 10
     },
     {
         "quality": 8,
-        "starting_bid": 10,
-        "acceptable_trades": ""
+        "starting_bid": 10
     },
     {
         "quality": 6,
-        "starting_bid": 10,
-        "acceptable_trades": ""
+        "starting_bid": 10
     },
     {
         "quality": 2,
-        "starting_bid": 10,
-        "acceptable_trades": ""
+        "starting_bid": 10
     }
 ]
