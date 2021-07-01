@@ -17,3 +17,35 @@ nav {
     height: 80px;
     width: 100%;
 }
+
+label.logo {
+    color:white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0px 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0px 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,a:hover {
+    background: var(--blueButton);
+    transition: .5s ease;
+}
