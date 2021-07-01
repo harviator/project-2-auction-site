@@ -28,35 +28,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/posting/:id', async (req, res) => {
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/login');
-    // } else {
-        try {
-            const postingData = await Posting.findByPk(req.params.id, {
-                include: [
-                    {
-                        model: User,
-                        attributes: ['username']
-                    },
-                    {
-                        model: Merchandise,
-                        attributes: ['name']
-                    }
-                ],
-            });
-            const posting = postingData.get({ plain: true})
-            console.log(posting)
-            res.render('viewitem', {
-                posting,
-                // loggedIn: req.session.loggedIn 
-            });
-        } catch (err) {
-            res.status(500).json(err);
-        }
-    // }
-});
-
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
