@@ -1,29 +1,29 @@
 <div>
-    <form>
+    <form class="add-post-form">
         {{!-- choose item --}}
         <div>
             <label>ITEM</label>
-            <select>
+            <select id="add-item">
                 {{#each items as |item|}}
-                <option value="{{item.name}}">{{item.name}}</option>
+                <option value="{{item.id}}">{{item.name}}</option>
                 {{/each}}
             </select>
         </div>
         {{!-- quality --}}
         <div>
             <label>QUALITY</label>
-            <input>
+            <input type="number" id="add-quality">
         </div>
         {{!-- starting bid --}}
         <div>
             <label>STARTING BID</label>
-            <input>
+            <input type="number" id="add-starting-bid">
         </div>
         {{!-- accept trades --}}
         <div>
             <p>ACCEPTABLE TRADES</p>
             {{#each items as |item|}}
-            <input type="checkbox" id="{{item.name}}" name="{{item.name}}" value="{{item.name}}">
+            <input type="checkbox" id="{{item.name}}" name="{{item.name}}" value="{{item.id}}">
             <label for="{{item.name}}">{{item.name}}</label>
             {{/each}}
         </div>
