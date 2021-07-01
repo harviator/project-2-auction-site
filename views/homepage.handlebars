@@ -3,6 +3,15 @@
 
     <section class="posts">
         {{#each auctions as |auction|}}
+        <h4>Item:</h4>
+        <p>{{auction.merchandise.name}}</p>
+        <h4>Starting Bid:</h4>
+        <p>{{auction.starting_bid}}</p>
+        <h4>Quality:</h4>
+        <p>{{auction.quality}}</p>
+        {{/each}}
+
+
             
 
     </section>

@@ -1,11 +1,27 @@
 <div>
-    {{!-- log in
-    -email
-    -password --}}
+    <h2>Log In</h2>
+    <form class="login-form">
+        <label for="username">username:</label>
+        <input class="username" type="text" id="email-login" >
+
+        <label for="password">password:</label>
+        <input class="password" type="password" id="password-login">
+
+        <button class="button" type="submit">login</button>
+    </form>
 </div>
 
 <div>
-    {{!-- Sign up
-      -email
-      -password --}}
+    <h2>Signup</h2>
+    <form class="signup-form">
+        <label for="username-signup">Create a username (use an email):</label>
+        <input class="username" type="text" id="username-signup" >
+
+        <label for="password">password:</label>
+        <input class="password" type="password" id="password-signup">
+
+        <button class="button" type="submit">Signup</button>
+    </form>
 </div>
+
+<script src="./jslogin.js"></script>
