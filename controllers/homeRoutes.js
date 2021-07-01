@@ -28,34 +28,48 @@ router.get('/', async (req, res) => {
     }
 });
 
-// router.get('/posting/:id', async (req, res) => {
-//     // if (!req.session.loggedIn) {
-//     //     res.redirect('/login');
-//     // } else {
-//         try {
-//             const postingData = await Posting.findByPk(req.params.id, {
-//                 include: [
-//                     {
-//                         model: User,
-//                         attributes: ['username']
-//                     },
-//                     {
-//                         model: Merchandise,
-//                         attributes: ['name']
-//                     }
-//                 ],
-//             });
-//             const posting = postingData.get({ plain: true})
-//             console.log(posting)
-//             res.render('viewitem', {
-//                 posting,
-//                 // loggedIn: req.session.loggedIn 
-//             });
-//         } catch (err) {
-//             res.status(500).json(err);
-//         }
-//     // }
-// });
+router.get('/posting/:id', async (req, res) => {
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    // } else {
+        try {
+            const postingData = await Posting.findByPk(req.params.id, {
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
+                        model: Merchandise,
+                        attributes: ['name']
+                    }
+                ],
+            });
+            const posting = postingData.get({ plain: true})
+            console.log(posting)
+            res.render('viewitem', {
+                posting,
+                // loggedIn: req.session.loggedIn 
+            });
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    // }
+});
+
+router.get('/addpost', async (req, res) => {
+    try {
+        const merchData = await Merchandise.findAll()
+        const items = merchData.map((item) => item.get({ plain: true }));
+        console.log(items);
+        res.render('newpost', {
+            items,
+            // loggedIn: req.session.loggedIn
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

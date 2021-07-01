@@ -1,4 +1,37 @@
 <div>
+    <form>
+        {{!-- choose item --}}
+        <div>
+            <label>ITEM</label>
+            <select>
+                {{#each items as |item|}}
+                <option value="{{item.name}}">{{item.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{!-- quality --}}
+        <div>
+            <label>QUALITY</label>
+            <input>
+        </div>
+        {{!-- starting bid --}}
+        <div>
+            <label>STARTING BID</label>
+            <input>
+        </div>
+        {{!-- accept trades --}}
+        <div>
+            <p>ACCEPTABLE TRADES</p>
+            {{#each items as |item|}}
+            <input type="checkbox" id="{{item.name}}" name="{{item.name}}" value="{{item.name}}">
+            <label for="{{item.name}}">{{item.name}}</label>
+            {{/each}}
+        </div>
+        {{!-- submit button --}}
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
     {{!-- View Item
     -Stuff from posting model:
         -quality
@@ -7,3 +40,5 @@
         -acceptable_trades
     -Post button  --}}
 </div>
+
+<script src="./js/newpost.js"></script>
