@@ -24,6 +24,7 @@ Posting.init (
     starting_bid: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0,
       validate: {
         notEmpty: true
       }

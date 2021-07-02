@@ -9,4 +9,11 @@
         <li>Current Bid: {{posting.current_bid}}</li>
         <li>Posted By: {{posting.user.username}}</li>
     </ul>
+    <form class="formHandler">
+      <label for="Bid Amount">Bid Amount</label>
+      <input type="text" class="bid-amount" placeholder="Enter Bid" id={{posting.id}}>
+      <button type="submit" id="place-bid-btn">Place Bid</button>
+      <button type="submit" id="update-bid-btn">Change Bid</button>
+    </form>
 </div>
+<script src="/js/bidItem.js"></script>
