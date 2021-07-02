@@ -49,6 +49,7 @@ router.post('/', async (req, res) => {
 
 // ROUTE TO UPDATE POSTINGS
 router.put('/:id', async (req, res) => {
+  console.log('route',req.body)
     try {
         const postingData = await Posting.update(
             {
