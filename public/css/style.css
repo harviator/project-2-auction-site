@@ -4,6 +4,8 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    /* Temporary border */
+    border: 1px solid black;
 }
 
 :root {
