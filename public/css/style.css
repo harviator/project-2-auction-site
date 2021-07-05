@@ -23,6 +23,10 @@
     --redButton: #EF6161;
 }
 
+.title {
+    
+}
+
 nav {
     background: var(--redBorder);
     height: 80px;
@@ -86,9 +90,10 @@ h2 {
 
 .fTable {
     border: 8px solid var(--redBorder);
-    box-shadow: 3px 4px 12px grey;     
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 3px 4px 12px grey;
+    height: 100%;     
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .tHead {
@@ -97,8 +102,9 @@ h2 {
     font-size: 20px;
 }
 
-.logCards {
-    margin: 20px;
+.logCards {    
+    margin-top: 20px;
+    height: 70%;
 }
 
 footer {
@@ -109,6 +115,15 @@ footer {
     /* Height of the footer*/ 
     height: 40px;
     /* background: grey; */
+}
+
+button {
+    color: #ffff;
+    margin-top: 5px; 
+    padding: 4px;   
+    border-radius: 5px;
+    width: fit-content;
+    background-color: var(--blueButton);
 }
 
 @media (max-width: 952px) {
