@@ -569,11 +569,11 @@ object {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img,
+/* img,
 video {
   max-width: 100%;
   height: auto;
-}
+} */
 
 *, ::before, ::after {
   --tw-border-opacity: 1;
