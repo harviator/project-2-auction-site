@@ -1,30 +1,30 @@
-<div>
-    <h2>Log In</h2>
-    <form class="login-form">
-        <label for="username">Email:</label>
-        <input class="username" type="text" id="email-login" >
 
-        <label for="password">Password:</label>
-        <input class="password" type="password" id="password-login">
+<div class="grid grid-cols-2 logCards">
+    <div class="fTable">
+        <h2 class="tHead">Log In</h2>
+        <form class="login-form ">
+            <label for="username">username:</label>
+            <input class="username" type="text" id="email-login">
 
-        <button class="button" type="submit">LOGIN</button>
-    </form>
-</div>
+            <label for="password">password:</label>
+            <input class="password" type="password" id="password-login">
 
-<div>
-    <h2>Signup</h2>
-    <form class="signup-form">
-        <label for="username-signup">Username:</label>
-        <input class="username" type="text" id="username-signup" >
+            <button class="button" type="submit">login</button>
+        </form>
+    </div>
 
-        <label for="email-signup">Email:</label>
-        <input class="email" type="text" id="email-signup">
+    <div class="fTable">
+        <h2 class="tHead">Sign Up</h2>
+        <form class="signup-form">
+            <label for="username-signup">Create a username (use an email):</label>
+            <input class="username" type="text" id="username-signup">
 
-        <label for="password">Password:</label>
-        <input class="password" type="password" id="password-signup">
+            <label for="password">password:</label>
+            <input class="password" type="password" id="password-signup">
 
-        <button class="button" type="submit">SIGNUP</button>
-    </form>
+            <button class="button" type="submit">Signup</button>
+        </form>
+    </div>
 </div>
 
 <script src="./js/login.js"></script>
