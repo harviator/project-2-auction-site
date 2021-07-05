@@ -97,6 +97,20 @@ h2 {
     font-size: 20px;
 }
 
+.logCards {
+    margin: 20px;
+}
+
+footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 40px;
+    /* background: grey; */
+}
+
 @media (max-width: 952px) {
     label.title {
         font-size: 30px;
