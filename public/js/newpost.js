@@ -4,11 +4,12 @@ const newFormHandler = async (event) => {
     const merchandise_id = document.querySelector('#add-item').value.trim();
     const quality = document.querySelector('#add-quality').value.trim();
     const starting_bid = document.querySelector('#add-starting-bid').value.trim();
+    const current_bid = starting_bid
 
     if (merchandise_id && quality && starting_bid) {
         const response = await fetch(`/api/postings`, {
             method: 'POST',
-            body: JSON.stringify({ merchandise_id, quality, starting_bid}),
+            body: JSON.stringify({ merchandise_id, quality, starting_bid, current_bid}),
             headers: {
                 'Content-Type': 'application/json',
             },

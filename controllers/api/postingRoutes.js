@@ -54,6 +54,7 @@ router.put('/:id', async (req, res) => {
         const postingData = await Posting.update(
             {
                 current_bid: req.body.current_bid,
+                bidder_id: req.session.user_id,
             },
             {
                 where: {
