@@ -1,7 +1,9 @@
-<div class="bg-black">
-    <form class="add-post-form">
-        {{!-- choose item --}}
-        <div>
+<div>
+    <h2>Post item for bidding</h2>
+    <form class="add-post-form fTable">
+        <div class="fTable grid grid-rows-1">
+            {{!-- choose item --}}
+        <div class="border border-black mx-auto">
             <label>ITEM</label>
             <select id="add-item">
                 {{#each items as |item|}}
@@ -9,29 +11,25 @@
                 {{/each}}
             </select>
         </div>
+
         {{!-- quality --}}
         <div>
             <label>QUALITY</label>
             <input type="number" id="add-quality">
         </div>
+
         {{!-- starting bid --}}
         <div>
             <label>STARTING BID</label>
             <input type="number" id="add-starting-bid">
         </div>
-        {{!-- accept trades --}}
-        {{!-- might remove if we dont get it to work --}}
-        <div>
-            <p>ACCEPTABLE TRADES</p>
-            {{#each items as |item|}}
-            <input type="checkbox" id="{{item.name}}" name="{{item.name}}" value="{{item.id}}">
-            <label for="{{item.name}}">{{item.name}}</label>
-            {{/each}}
-        </div>
+       
         {{!-- submit button --}}
         <div>
-            <input type="submit" value="Submit">
+            <button type="submit" value="Submit">Submit</button>
         </div>
+        </div>
+        
     </form>
 </div>
 
