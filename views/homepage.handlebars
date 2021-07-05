@@ -1,25 +1,32 @@
 <div>
-    <h2>Current Auctions</h2>
+    <h2 class="mb-5">Current Auctions</h2>
+    <table class="fTable">
+        <thead class="tHead">
+            <tr>                
+                <th class="w-1/5 text-center px-4 py-4">                
+                <div class="uppercase tracking-wide">Items</div>                
+                </th>
 
-    <table class="table-auto">
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Starting Bid</th>
-                <th>Quality</th>
+                <th class="w-1/5 text-center px-4 py-4">
+                <div class="uppercase tracking-wide">Starting Bid</div>   
+                </th>
+
+                <th class="w-1/5 text-center px-4 py-4">
+                <div class="uppercase tracking-wide">Quality</div>
+                </th>
             </tr>
         </thead>
         <tbody>
             {{#each auctions as |auction|}}
-            <tr>
-                <td><p>Item</p> {{auction.merchandise.name}}</td>
-                <td>{{auction.starting_bid}}</td>
-                <td>{{auction.quality}}</td>
+            <tr class="text-center">
+                <td class="border border-black">{{auction.merchandise.name}}</td>
+                <td class="border border-black">{{auction.starting_bid}}</td>
+                <td class="border border-black">{{auction.quality}}</td>
             </tr>
             {{/each}}
         </tbody>
     </table>
+</div>
     {{!-- Current items for sale
     -Need a hb for loop to render
-    -Ability to select item if logged in.  If not logged in need to be redirected to login page --}}
-</div>
+    -Ability to select item if logged in. If not logged in need to be redirected to login page --}}
