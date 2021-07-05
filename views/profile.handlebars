@@ -1,6 +1,5 @@
 <div>
-    <h2 class="text-center">Current Auctions</h2>
-
+    <h2 class="mb-5">Current Auctions</h2>
     <table class="fTable">
         <thead class="tHead">
             <tr>                
@@ -18,20 +17,17 @@
             </tr>
         </thead>
         <tbody>
-            {{#each auctions as |auction|}}
+            {{#each postings as |post|}}
             <tr class="text-center">
                 <td class="border border-black">
-                    <a href="/posting/{{auction.id}}">
-                        {{auction.merchandise.name}}
+                    <a href="/posting/{{post.id}}">
+                        {{post.merchandise.name}}
                     </a>                    
                 </td>
-                <td class="border border-black">{{auction.starting_bid}}</td>
-                <td class="border border-black">{{auction.quality}}</td>
+                <td class="border border-black">{{post.starting_bid}}</td>
+                <td class="border border-black">{{post.quality}}</td>
             </tr>
             {{/each}}
         </tbody>
     </table>
 </div>
-    {{!-- Current items for sale
-    -Need a hb for loop to render
-    -Ability to select item if logged in. If not logged in need to be redirected to login page --}}

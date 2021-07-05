@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
             console.log(posting)
             res.render('viewitem', {
                 posting,
-                // loggedIn: req.session.loggedIn
+                loggedIn: req.session.loggedIn
             });
         } catch (err) {
             res.status(500).json(err);
@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
     try {
         const newPosting = await Posting.create({
             ...req.body,
-            user_id: 1,
+            user_id: req.session.user_id,
         });
 
         res.status(200).json(newPosting);

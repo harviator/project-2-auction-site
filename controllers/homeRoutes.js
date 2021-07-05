@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
         console.log(auctions)
         res.render('homepage', {
             auctions,
-            //   logged_in: req.session.logged_in
+            logged_in: req.session.logged_in
         })
     } catch (error) {
         res.status(500).json(error);
@@ -29,9 +29,6 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/posting/:id', async (req, res) => {
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/login');
-    // } else {
         try {
             const postingData = await Posting.findByPk(req.params.id, {
                 include: [
@@ -49,22 +46,48 @@ router.get('/posting/:id', async (req, res) => {
             console.log(posting)
             res.render('viewitem', {
                 posting,
-                // loggedIn: req.session.loggedIn 
+                logged_in: req.session.logged_in 
             });
         } catch (err) {
             res.status(500).json(err);
         }
-    // }
 });
 
-router.get('/addpost', async (req, res) => {
+router.get('/addpost', withAuth, async (req, res) => {
     try {
         const merchData = await Merchandise.findAll()
         const items = merchData.map((item) => item.get({ plain: true }));
         console.log(items);
         res.render('newpost', {
             items,
-            // loggedIn: req.session.loggedIn
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+router.get('/profile', withAuth, async (req, res) => {
+    try {
+        const postingData = await Posting.findAll({
+            where: {
+                user_id : req.session.user_id
+            },
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Merchandise,
+                    attributes: ['name']
+                }
+            ],
+        });
+        const postings = postingData.map((post) => post.get({ plain: true }));
+        res.render('profile', {
+            postings,
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err)
@@ -72,11 +95,10 @@ router.get('/addpost', async (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
     }
-
     res.render('login');
 });
 
