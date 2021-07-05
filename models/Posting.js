@@ -32,6 +32,13 @@ Posting.init (
     current_bid: {
       type: DataTypes.INTEGER,
     },
+    bidder_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
     merchandise_id: {
       type: DataTypes.INTEGER,
       references: {

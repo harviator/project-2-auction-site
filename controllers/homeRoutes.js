@@ -28,13 +28,20 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/posting/:id', async (req, res) => {
+router.get('/posting/:id', withAuth, async (req, res) => {
         try {
             const postingData = await Posting.findByPk(req.params.id, {
                 include: [
                     {
                         model: User,
+                        as: 'bidder',
                         attributes: ['username']
+                    },
+                    {
+                        model: User,
+                        as: 'poster',
+                        attributes: ['username']
+                        
                     },
                     {
                         model: Merchandise,

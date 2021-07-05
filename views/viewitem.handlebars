@@ -4,10 +4,10 @@
     <h4>Quality: {{posting.quality}}</h4>
 
     <h4>Details:</h4>
-    <ul>
-        <li>Starting Bid: {{posting.starting_bid}}</li>
+    <ul>        
         <li>Current Bid: {{posting.current_bid}}</li>
-        <li>Posted By: {{posting.user.username}}</li>
+        <li>Current Bidder: {{posting.bidder.username}}</li>
+        <li>Posted By: {{posting.poster.username}}</li>
     </ul>
     <form class="formHandler">
       <label for="Bid Amount">Bid Amount</label>
