@@ -166,6 +166,7 @@ button {
     padding: 4px;   
     border-radius: 5px;
     width: fit-content;
+    height: fit-content;
     background-color: var(--blueButton);
 }
 
