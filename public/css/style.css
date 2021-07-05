@@ -88,6 +88,11 @@ h2 {
     font-size: 36px;
 }
 
+h3 {
+    font-size: 19px;
+    font-weight: bolder;
+}
+
 .fTable {
     border: 8px solid var(--redBorder);
     box-shadow: 3px 4px 12px grey;
@@ -125,6 +130,42 @@ button {
     width: fit-content;
     background-color: var(--blueButton);
 }
+
+img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    border-radius: 5px;
+    box-shadow: 3px 4px 12px grey;
+    margin: 20px;
+}
+
+.grey {
+    color: grey;
+}
+
+#description {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#team {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
 
 @media (max-width: 952px) {
     label.title {
