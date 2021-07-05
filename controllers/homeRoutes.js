@@ -90,6 +90,7 @@ router.get('/profile', withAuth, async (req, res) => {
             include: [
                 {
                     model: User,
+                    as: 'poster',
                     attributes: ['username']
                 },
                 {
