@@ -1,6 +1,9 @@
+/* ============ */
+/* Tailwind src */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ============ */
 
 * {
     margin: 0px;
@@ -9,9 +12,11 @@
     list-style: none;
     box-sizing: border-box;
     /* Temporary border */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
+/* ================ */
+/* Navbar */
 :root {
     --redBorder: #F96363;
     --blueButton: #15BEE3;
@@ -34,7 +39,7 @@ label.title {
     font-size: 35px;
     line-height: 80px;
     padding: 0px 100px;
-    font-weight: bold;
+    font-weight: bold;    
 }
 
 nav ul {
@@ -72,6 +77,28 @@ a.active,a:hover {
 #check {
     display: none;
 }
+/* Navbar */
+/* ================ */
+
+h2 {
+    font-size: 36px;
+}
+
+.fTable {
+    border: 5px solid var(--redBorder);
+    border-radius: 5px;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tHead {
+    background-color: var(--redBorder);
+    color: white;
+    font-size: 20px;
+}
+
+
+
 
 @media (max-width: 952px) {
     label.title {
