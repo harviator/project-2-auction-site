@@ -67,6 +67,33 @@ router.get('/addpost', withAuth, async (req, res) => {
     }
 })
 
+router.get('/profile', withAuth, async (req, res) => {
+    try {
+        const postingData = await Posting.findAll({
+            where: {
+                user_id : req.session.user_id
+            },
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Merchandise,
+                    attributes: ['name']
+                }
+            ],
+        });
+        const postings = postingData.map((post) => post.get({ plain: true }));
+        res.render('profile', {
+            postings,
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');

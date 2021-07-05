@@ -1,0 +1,33 @@
+<div>
+    <h2 class="mb-5">Current Auctions</h2>
+    <table class="fTable">
+        <thead class="tHead">
+            <tr>                
+                <th class="w-1/5 text-center px-4 py-4">                
+                <div class="uppercase tracking-wide">Items</div>                
+                </th>
+
+                <th class="w-1/5 text-center px-4 py-4">
+                <div class="uppercase tracking-wide">Starting Bid</div>   
+                </th>
+
+                <th class="w-1/5 text-center px-4 py-4">
+                <div class="uppercase tracking-wide">Quality</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each postings as |post|}}
+            <tr class="text-center">
+                <td class="border border-black">
+                    <a href="/posting/{{post.id}}">
+                        {{post.merchandise.name}}
+                    </a>                    
+                </td>
+                <td class="border border-black">{{post.starting_bid}}</td>
+                <td class="border border-black">{{post.quality}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
