@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <link>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="/css/all.min.css"></link>
-    <link rel="stylesheet" href="/css/tailwind.css"></link>
-    <link rel="stylesheet" href="/css/style.css"></link>    
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/all.min.css">
+</link>
+<link rel="stylesheet" href="/css/tailwind.css">
+</link>
+<link rel="stylesheet" href="/css/style.css">
+</link>
+<title>Document</title>
 </head>
+
 <body>
     <header>
-        <nav>            
+        <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
-            </label>            
+            </label>
             <label class="title"><i class="fas fa-gamepad" id="logo"></i>Super Auction Kart</label>
             <ul>
-                <li><a href="/">Home</a></li> 
-                <li><a href="/addpost">Post New Bid</a></li>                   
+                <li><a href="/">Home</a></li>
+                <li><a href="/addpost">Post New Bid</a></li>
+                {{#if logged_in}}
+                <li><a href="/profile">Profile</a></li>
+
+                {{!-- NEED TO FIND WAY TO LOG OUT --}}
+                <li><a href="/logout"></button>Logout</button></li>
+                {{else}}
                 <li><a href="/login">Login / Sign up</a></li>
-                <li><a href="/about">About</a></li>        
-            </ul>              
+                {{/if}}
+                <li><a href="/about">About</a></li>
+            </ul>
         </nav>
-        
+
     </header>
 
     <main>
@@ -32,7 +43,8 @@
     </main>
 
     <footer>
-        <p class ="text-5px text-center">Copyright &#xA9 2021 KEDJ-Dev. All Rights Reserved</p>
+        <p class="text-5px text-center">Copyright &#xA9 2021 KEDJ-Dev. All Rights Reserved</p>
     </footer>
 </body>
+
 </html>
