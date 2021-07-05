@@ -9,7 +9,14 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
+                    as: 'bidder',
                     attributes: ['username']
+                },
+                {
+                    model: User,
+                    as: 'poster',
+                    attributes: ['username']
+                    
                 },
                 {
                     model: Merchandise,
