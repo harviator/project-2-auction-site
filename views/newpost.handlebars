@@ -20,6 +20,7 @@
             <input type="number" id="add-starting-bid">
         </div>
         {{!-- accept trades --}}
+        {{!-- might remove if we dont get it to work --}}
         <div>
             <p>ACCEPTABLE TRADES</p>
             {{#each items as |item|}}
@@ -32,13 +33,6 @@
             <input type="submit" value="Submit">
         </div>
     </form>
-    {{!-- View Item
-    -Stuff from posting model:
-        -quality
-        -starting_bid
-        -current_bid
-        -acceptable_trades
-    -Post button  --}}
 </div>
 
 <script src="/js/newpost.js"></script>
