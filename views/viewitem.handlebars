@@ -1,19 +1,21 @@
-<div class="">
-    <h2>{{posting.merchandise.name}}</h2>
+<div class="main-container ">
+
+  <div class=" main-title fTable">
+    <h2 class="post-title m-5">{{posting.merchandise.name}}</h2>
 
     <h4>Quality: {{posting.quality}}</h4>
 
     <h4>Details:</h4>
-    <ul>        
-        <li>Current Bid: {{posting.current_bid}}</li>
-        <li>Current Bidder: {{posting.bidder.username}}</li>
-        <li>Posted By: {{posting.poster.username}}</li>
+    <ul>
+      <li>Current Bid: {{posting.current_bid}}</li>
+      <li>Current Bidder: {{posting.bidder.username}}</li>
+      <li>Posted By: {{posting.poster.username}}</li>
     </ul>
     <form class="formHandler">
       <label for="Bid Amount">Bid Amount</label>
       <input type="text" class="bid-amount" placeholder="Enter Bid" id={{posting.id}}>
-      <button type="submit" id="place-bid-btn">Place Bid</button>
       <button type="submit" id="update-bid-btn">Change Bid</button>
     </form>
+  </div>
 </div>
 <script src="/js/bidItem.js"></script>
