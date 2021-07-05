@@ -85,8 +85,8 @@ h2 {
 }
 
 .fTable {
-    border: 5px solid var(--redBorder);
-    border-radius: 5px;    
+    border: 8px solid var(--redBorder);
+    box-shadow: 3px 4px 12px grey;     
     margin-left: auto;
     margin-right: auto;
 }
@@ -96,9 +96,6 @@ h2 {
     color: white;
     font-size: 20px;
 }
-
-
-
 
 @media (max-width: 952px) {
     label.title {
