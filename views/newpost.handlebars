@@ -1,9 +1,12 @@
 <div>
     <h2>Post New Bid</h2>
-    <form class="add-post-form fTable mx-auto">
+    <div class="fTable w-max mx-auto">
+        <h2 class="tHead">Select Item</h2>
+        <form class="add-post-form">
         <div class="grid grid-rows-1">
+
             {{!-- choose item --}}
-        <div class="border border-black mx-auto">
+        <div class="border border-black mx-auto mt-2">
             <label>ITEM</label>
             <select id="add-item">
                 {{#each items as |item|}}
@@ -13,24 +16,25 @@
         </div>
 
         {{!-- quality --}}
-        <div class="mx-auto">
+        <div class="my-2">
             <label>QUALITY</label>
-            <input class="border border-black m-2" type="number" id="add-quality">
+            <input class="border border-black" type="number" id="add-quality">
         </div>
 
         {{!-- starting bid --}}
-        <div class="mx-auto">
+        <div class="my-2">
             <label>STARTING BID</label>
-            <input class="border border-black m-2" type="number" id="add-starting-bid">
+            <input class="border border-black " type="number" id="add-starting-bid">
         </div>
        
         {{!-- submit button --}}
-        <div class="mx-auto">
-            <button class="border border-black m-2" type="submit" value="Submit">Submit</button>
+        <div class="mx-auto mb-2">
+            <button type="submit" value="Submit">Submit</button>
         </div>
         </div>
         
     </form>
+    </div>
 </div>
 
 <script src="/js/newpost.js"></script>
