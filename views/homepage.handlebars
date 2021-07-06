@@ -1,5 +1,5 @@
 <div>
-    <h2 class="text-center">Current Auctions</h2>
+    <h2 class="ml-96 mt-6">Current Auctions</h2>
 
     <table class="fTable mx-auto">
         <thead class="tHead">
@@ -25,7 +25,7 @@
                         {{auction.merchandise.name}}
                     </a>                    
                 </td>
-                <td class="border border-black">{{auction.current_bid}}</td>
+                <td class="border border-black">${{auction.current_bid}}</td>
                 <td class="border border-black">{{auction.quality}}</td>
             </tr>
             {{/each}}

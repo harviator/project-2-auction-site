@@ -1,38 +1,40 @@
-<div class="bg-black">
-    <form class="add-post-form">
-        {{!-- choose item --}}
-        <div>
-            <label>ITEM</label>
-            <select id="add-item">
-                {{#each items as |item|}}
-                <option value="{{item.id}}">{{item.name}}</option>
-                {{/each}}
-            </select>
-        </div>
-        {{!-- quality --}}
-        <div>
-            <label>QUALITY</label>
-            <input type="number" id="add-quality">
-        </div>
-        {{!-- starting bid --}}
-        <div>
-            <label>STARTING BID</label>
-            <input type="number" id="add-starting-bid">
-        </div>
-        {{!-- accept trades --}}
-        {{!-- might remove if we dont get it to work --}}
-        <div>
-            <p>ACCEPTABLE TRADES</p>
-            {{#each items as |item|}}
-            <input type="checkbox" id="{{item.name}}" name="{{item.name}}" value="{{item.id}}">
-            <label for="{{item.name}}">{{item.name}}</label>
-            {{/each}}
-        </div>
-        {{!-- submit button --}}
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+<div>
+    <h2 class="ml-96 mt-6">Post New Bid</h2>
+    <div class="fTable w-min mx-auto">
+        <h2 class="tHead">Item Info</h2>
+        <form class="add-post-form">
+            <div class="grid grid-rows-1">
+
+                {{!-- choose item --}}
+                <div class="grid grid-rows-1 mx-auto">
+                    <label>Select Item</label>
+                    <select class="border border-black mx-auto" id="add-item">
+                        {{#each items as |item|}}
+                        <option value="{{item.id}}">{{item.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                {{!-- quality --}}
+                <div class="grid grid-rows-1 mx-auto">
+                    <label>Enter Quality</label>
+                    <input class="border border-black" type="number" id="add-quality">
+                </div>
+
+                {{!-- starting bid --}}
+                <div class="grid grid-rows-1 mx-auto">
+                    <label>Enter Start Bid</label>
+                    <input class="border border-black " type="number" id="add-starting-bid">
+                </div>
+
+                {{!-- submit button --}}
+                <div class="mx-auto mb-2">
+                    <button type="submit" value="Submit">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
 </div>
 
 <script src="/js/newpost.js"></script>
