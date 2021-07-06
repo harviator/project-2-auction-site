@@ -1,19 +1,19 @@
 <div>
-    <h2 class="ml-96 mt-6">Current Auctions</h2>
+    <h2 class="text-center mt-6 font-extrabold">Current Auctions</h2>
 
     <table class="fTable mx-auto">
         <thead class="tHead">
-            <tr>                
-                <th class="w-1/5 text-center px-4 py-4">                
-                <div class="uppercase tracking-wide">Items</div>                
+            <tr>
+                <th class="w-1/5 text-center px-4 py-4">
+                    <div class="uppercase tracking-wide">Items</div>
                 </th>
 
                 <th class="w-1/5 text-center px-4 py-4">
-                <div class="uppercase tracking-wide">Current Bid</div>   
+                    <div class="uppercase tracking-wide">Current Bid</div>
                 </th>
 
                 <th class="w-1/5 text-center px-4 py-4">
-                <div class="uppercase tracking-wide">Quality</div>
+                    <div class="uppercase tracking-wide">Quality</div>
                 </th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
                 <td class="border border-black">
                     <a href="/posting/{{auction.id}}">
                         {{auction.merchandise.name}}
-                    </a>                    
+                    </a>
                 </td>
                 <td class="border border-black">${{auction.current_bid}}</td>
                 <td class="border border-black">{{auction.quality}}</td>
@@ -32,6 +32,18 @@
         </tbody>
     </table>
 </div>
-    {{!-- Current items for sale
-    -Need a hb for loop to render
-    -Ability to select item if logged in. If not logged in need to be redirected to login page --}}
+
+<div class="user-dashboard">
+    <div class="fTable card" id="my-bids">
+            <h3>My Bids</h3>
+            <p class="grey">Coming Soon</p>
+    </div>
+    <div class="fTable card" id="most-recent">
+            <h3>Most Recent</h3>
+            <p class="grey">Coming Soon</p>
+    </div>
+    <div class="fTable card" id="my-auctions">
+            <h3>My Auctions</h3>
+            <p class="grey">Coming Soon</p>
+    </div>
+</div>

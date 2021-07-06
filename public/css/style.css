@@ -24,7 +24,7 @@
 }
 
 .title {
-    
+  margin-left: -2.5em; 
 }
 
 nav {
@@ -143,7 +143,7 @@ footer {
   line-height: 3em;
   text-align: center;
   font-size: larger;
-  padding:10px;
+  /* padding:10px; */
   /* padding: 10em; */
   /* border-color: black;
   border-radius: 50em; */
@@ -190,7 +190,25 @@ img {
 }
 
 .grey {
+    padding: 100px 150px 100px 150px;
     color: grey;
+}
+
+.user-dashboard {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.card > h3 {
+    background-color: var(--redBorder);
+    color: white;
+}
+
+.card > p {
+    font-size: 15px;
+    font-weight: bolder;
 }
 
 #description {
