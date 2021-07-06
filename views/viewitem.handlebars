@@ -7,12 +7,12 @@
 
     <h4>Details:</h4>
     <ul>
-      <li>Current Bid: {{posting.current_bid}}</li>
+      <li id="curr_bid">Current Bid: {{posting.current_bid}}</li>
       <li>Current Bidder: {{posting.bidder.username}}</li>
       <li>Posted By: {{posting.poster.username}}</li>
     </ul>
     <form class="formHandler">
-      <label for="Bid Amount">Bid Amount</label>
+      <label for="bid-amount">Bid Amount</label>
       <input type="text" class="bid-amount" placeholder="Enter Bid" id={{posting.id}}>
       <button type="submit" id="update-bid-btn">Change Bid</button>
     </form>

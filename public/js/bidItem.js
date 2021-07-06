@@ -14,24 +14,31 @@ const formSubmit = document.querySelector('formHandler');
 changeBidBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  const current_bid=document.querySelector('.bid-amount')
+  const current_bid = document.querySelector('.bid-amount')
+  const prev_bidEl = document.querySelector('#curr_bid')
+  let prev_bid = prev_bidEl.innerHTML
   let newBid = {
     current_bid: current_bid.value.trim()
-
   };
-  console.log('function',current_bid.id)
- 
-  const response= await fetch(`/api/postings/${current_bid.id}`, {
+  
+  let newList = prev_bid.split(" ")
+  prev_bid = newList[2]
+
+  if (Number(current_bid.value) > Number(prev_bid)) {
+    const response = await fetch(`/api/postings/${current_bid.id}`, {
       method: 'PUT',
       body: JSON.stringify(newBid),
       headers: {
-        'Content-Type': 'application/json'},
+        'Content-Type': 'application/json'
+      },
     });
 
-   if(response.ok){
-     console.log('success')
-     location.replace(`/posting/${current_bid.id}`)
-   }
+    if (response.ok) {
+      console.log('success')
+      location.replace(`/posting/${current_bid.id}`)
+    }
+  }
+
 
 })
 
@@ -52,5 +59,5 @@ changeBidBtn.addEventListener("click", async (e) => {
 //     console.log('success')
 //     location.replace(`/posting/${starting_bid.id}`)
 //   }
-  
+
 // })
