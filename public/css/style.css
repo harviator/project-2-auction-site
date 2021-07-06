@@ -66,7 +66,7 @@ nav ul li a {
 }
 
 a.active,a:hover {
-    background: var(--blueButton);
+    background: var(--blueButton);    
     transition: .5s ease;
 }
 .checkbtn {
@@ -238,7 +238,7 @@ img {
     }
 }
 
-@media (max-width: 858px) {
+@media (max-width: 1049px) {
     .checkbtn {
         display: block;
     }
