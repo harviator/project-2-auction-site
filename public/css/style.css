@@ -190,23 +190,28 @@ img {
 }
 
 .grey {
-    padding: 100px 150px 100px 150px;
     color: grey;
 }
 
 .user-dashboard {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
     margin-top: 100px;
 }
 
-.card > h3 {
+.dashboard {
+    margin: 20px;
+}
+
+.dashboard > h3 {
     background-color: var(--redBorder);
     color: white;
 }
 
-.card > p {
+.dashboard > p {
+    padding: 100px 150px 100px 150px;
     font-size: 15px;
     font-weight: bolder;
 }
